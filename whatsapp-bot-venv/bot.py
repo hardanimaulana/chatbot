@@ -11,7 +11,7 @@ def bot():
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
-    if 'quote' in incoming_msg:
+    if 'kata' in incoming_msg:
         # return a quote
         r = requests.get('https://api.quotable.io/random')
         if r.status_code == 200:
@@ -21,12 +21,15 @@ def bot():
             quote = 'I could not retrieve a quote at this time, sorry.'
         msg.body(quote)
         responded = True
-    if 'cat' in incoming_msg:
+    if 'gambar' in incoming_msg:
         # return a cat pic
-        msg.media('https://cataas.com/cat')
+        msg.media('https://source.unsplash.com/featured/?birthday')
+        responded = True
+    if 'tanggal' in incoming_msg:
+        msg.body('13 Juli 2020')
         responded = True
     if not responded:
-        msg.body('I only know about famous quotes and cats, sorry!')
+        msg.body('Kata kunci tidak dikenali, mohon maaf. Silahkan gunakan: kata, gambar, tanggal')
     return str(resp)
 
 
