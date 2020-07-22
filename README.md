@@ -1,5 +1,7 @@
 # chatbot
 
+Implementation from this source https://www.twilio.com/blog/build-a-whatsapp-chatbot-with-python-flask-and-twilio
+
 How to run:
 
 In the 1st terminal:
